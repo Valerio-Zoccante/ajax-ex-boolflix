@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/7ade85b05b.js" crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <span class="header-lf">BOOLFLIX</span>
+                <input class="search-input" placeholder="Insert the title here">
+            </div>
+        </header>
+        <div class="result-card">
+        </div>
+
+        <script id="card-template" type="text/x-handlebars-template">
+            <div class="card-movie">
+                <div class="img-preview">
+                    <img src="https://image.tmdb.org/t/p/w342{{img}}" alt="Cover picture">
+                </div>
+                <div class="back">
+                    <p><strong>Titolo</strong>: {{title}}</p>
+                    <p><strong>Original_Title</strong>: {{orTitle}}</p>
+                    <!-- <img src="https://www.countryflags.io/{{country}}/flat/64.png" alt="Country flag"> -->
+                    <p><strong>Voto</strong>: {{{rate}}}</p>
+                    <p><strong>Overview</strong>: {{overview}};</p>
+                </div>
+            </div>
+        </script>
+        <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>
