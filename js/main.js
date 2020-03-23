@@ -60,7 +60,7 @@ function answApiMovie(arrayA) {
         var objCard = {
             "title": arrayA[i].title,
             "orTitle": arrayA[i].original_title,
-            "country": elaborateFlag(arrayA[i].original_language),
+            // "country": elaborateFlag(arrayA[i].original_language),
             "rate": elaborateRate(arrayA[i].vote_average),
             "img": arrayA[i].poster_path,
             "overview": arrayA[i].overview
@@ -80,7 +80,7 @@ function answApiSeries(arrayA) {
         var objCard = {
             "title": arrayA[i].name,
             "orTitle": arrayA[i].original_name,
-            "country": elaborateFlag(arrayA[i].original_language),
+            // "country": elaborateFlag(arrayA[i].original_language),
             "rate": elaborateRate(arrayA[i].vote_average),
             "img": arrayA[i].poster_path,
             "overview": arrayA[i].overview
@@ -135,7 +135,6 @@ $(document).on('mouseleave', '.card-movie', function(){
     $(this).children('.back').removeClass('active');
 });
 
-//milestone 5 funzione attori
 // function findActors(movieId) {
 //     $.ajax({
 //         url: apiBaseUrl + '/movie/' + movieId + '/credits?',
@@ -144,7 +143,7 @@ $(document).on('mouseleave', '.card-movie', function(){
 //         },
 //         method: 'GET',
 //         success: function(data) {
-//             returnActors(data);
+//             var result = data.cast;
 //         },
 //         error: function(err) {
 //             alert('error');
@@ -152,13 +151,3 @@ $(document).on('mouseleave', '.card-movie', function(){
 //     });
 // };
 //
-// function returnActors(inputActors) {
-//     var objectActors = {
-//         actor1: inputActors.cast[0].name,
-//         actor2: inputActors.cast[1].name,
-//         actor3: inputActors.cast[2].name,
-//         actor4: inputActors.cast[3].name,
-//         actor5: inputActors.cast[4].name,
-//     };
-//     return objectActors;
-// }
