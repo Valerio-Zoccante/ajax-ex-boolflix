@@ -21,6 +21,8 @@ function afterTriggerSearch() {
         $('.result-card').html('');
         search("movie", titleToSearch);
         search("tv", titleToSearch);
+    } else {
+        $('.result-card').html('');
     }
 };
 
