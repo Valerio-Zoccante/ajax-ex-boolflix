@@ -2,6 +2,9 @@
 var sourceCard = $("#card-template").html();
 var templateCard = Handlebars.compile(sourceCard);
 
+//variabile url di apiBase
+var apiBaseUrl = 'https://api.themoviedb.org/3';
+
 //resetto valore input al refresh
 $('.search-input').val('');
 
@@ -22,14 +25,12 @@ function afterTriggerSearch() {
         search("movie", titleToSearch);
         search("tv", titleToSearch);
     } else {
-        $('.result-card').html('');
+        $('.result-card').html('');                     //pulisco quando vengono tolte tutte le lettere dalla ricerca
     }
 };
 
 //funzione di ricerca film e serie tv con richiamo api
 function search(kindofShow, inputTitle) {
-var apiBaseUrl = 'https://api.themoviedb.org/3';
-
 $.ajax({
     url: apiBaseUrl + '/search/' + kindofShow + '/',
     data: {
@@ -96,13 +97,16 @@ function answApiSeries(arrayA) {
 // funzione per aggiungere stelle voto
 function elaborateRate(inputNumber){
     var elVote = Math.ceil(inputNumber / 2);
-    var cumulateStar = '';
+    var star = '';
     if (elVote !== 0) {                                        //controllo quando non c'è il voto average
-    for (var i = 0; i < elVote; i++) {
-        var star = '<i class="far fa-star"></i>';
-        var cumulateStar = star + cumulateStar;
+    for (var i = 0; i < 5; i++) {
+        if(i < elVote) {
+            star += '<i class="fas fa-star"></i>';
+        } else {
+            star += '<i class="far fa-star"></i>';
+        }
     }
-    return cumulateStar;
+    return star;
 } else {
     return "<span>No rate available</span>";
 }
@@ -130,3 +134,31 @@ $(document).on('mouseleave', '.card-movie', function(){
     $(this).children('.img-preview').removeClass('disactive');
     $(this).children('.back').removeClass('active');
 });
+
+//milestone 5 funzione attori
+// function findActors(movieId) {
+//     $.ajax({
+//         url: apiBaseUrl + '/movie/' + movieId + '/credits?',
+//         data: {
+//             api_key: '71f874830a927f7cb3c7321fa2e7c749',
+//         },
+//         method: 'GET',
+//         success: function(data) {
+//             returnActors(data);
+//         },
+//         error: function(err) {
+//             alert('error');
+//         }
+//     });
+// };
+//
+// function returnActors(inputActors) {
+//     var objectActors = {
+//         actor1: inputActors.cast[0].name,
+//         actor2: inputActors.cast[1].name,
+//         actor3: inputActors.cast[2].name,
+//         actor4: inputActors.cast[3].name,
+//         actor5: inputActors.cast[4].name,
+//     };
+//     return objectActors;
+// }
