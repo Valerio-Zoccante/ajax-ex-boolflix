@@ -9,7 +9,7 @@ var apiBaseUrl = 'https://api.themoviedb.org/3';
 $('.search-input').val('');
 
 
-//gestione trigger con inserimento lettere e passo in ingresso input stringa di ricerca
+//gestione trigger con click invio e passo in ingresso input stringa di ricerca
 
 
 $('#button').click(function(event) {
@@ -25,7 +25,8 @@ function afterTriggerSearch() {
         search("movie", titleToSearch);
         search("tv", titleToSearch);
     } else {
-        $('.result-card').html('');                     //pulisco quando vengono tolte tutte le lettere dalla ricerca
+        $('.result-card').html('');
+        alert('insert input in the search bar');    //ibserire input nella search bar
     }
 };
 
