@@ -12,7 +12,7 @@ $('.search-input').val('');
 //gestione trigger con inserimento lettere e passo in ingresso input stringa di ricerca
 
 
-$('.search-input').keyup(function(event) {
+$('#button').click(function(event) {
         afterTriggerSearch();
 });
 

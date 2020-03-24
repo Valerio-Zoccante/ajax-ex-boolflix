@@ -30,7 +30,7 @@ header {
 }
 
 .header-lf {
-    flex-basis: 20%;
+    flex-basis: 70%;
     font-size: 5vh;
     color: red;
 }
@@ -38,6 +38,11 @@ header {
 .search-input {
     border-radius: 10px;
     padding: 1vh 5vh;
+}
+
+#button {
+    border-radius: 10px;
+    padding: 0.5vh 5vh;
 }
 
 /* .card-img {
