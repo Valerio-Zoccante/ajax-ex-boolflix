@@ -43,15 +43,8 @@ header {
 #button {
     border-radius: 10px;
     padding: 0.5vh 5vh;
+    margin-left: 10px;
 }
-
-/* .card-img {
-    margin: 20px;
-    max-width: 15vw;
-    line-height: 2vh;
-    font-size: 15px;
-    border: 1px solid white;
-} */
 
 .card-movie {
     margin: 20px;
@@ -70,6 +63,11 @@ header {
     color: white;
     overflow-y: auto;
     display: none;
+}
+
+.back-img {
+    width: 20px;
+    transform: translateY(20%);
 }
 
 .active {

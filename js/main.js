@@ -61,7 +61,7 @@ function answApiMovie(arrayA) {
         var objCard = {
             "title": arrayA[i].title,
             "orTitle": arrayA[i].original_title,
-            // "country": elaborateFlag(arrayA[i].original_language),
+            "country": elaborateFlag(arrayA[i].original_language),
             "rate": elaborateRate(arrayA[i].vote_average),
             "img": arrayA[i].poster_path,
             "overview": arrayA[i].overview
@@ -81,7 +81,7 @@ function answApiSeries(arrayA) {
         var objCard = {
             "title": arrayA[i].name,
             "orTitle": arrayA[i].original_name,
-            // "country": elaborateFlag(arrayA[i].original_language),
+            "country": elaborateFlag(arrayA[i].original_language),
             "rate": elaborateRate(arrayA[i].vote_average),
             "img": arrayA[i].poster_path,
             "overview": arrayA[i].overview
