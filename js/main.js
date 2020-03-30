@@ -11,7 +11,6 @@ $('.search-input').val('');
 
 //gestione trigger con click invio e passo in ingresso input stringa di ricerca
 
-
 $('#button').click(function(event) {
         afterTriggerSearch();
 });
